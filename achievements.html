@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Aarav Mehta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .achievements-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .achievements-header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .achievement-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .achievement-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .achievement-content {
+            padding: 20px;
+        }
+
+        .achievement-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .achievement-card:hover .achievement-image img {
+            transform: scale(1.05);
+        }
+
+        .achievement-title {
+            font-size: 1.8em;
+            color: #FFD700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .achievement-title i {
+            font-size: 0.8em;
+        }
+
+        .achievement-description {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .achievement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="achievements-header">
+            <h1>Achievements & Recognition</h1>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-content">
+                <h2 class="achievement-title">
+                    <i class="fas fa-code"></i>
+                    Competitive Programming Excellence
+                </h2>
+                <p class="achievement-description">Adeptly resolved 800+ problems on LeetCode, GeeksforGeeks, and Codeforces, demonstrating strong problem-solving abilities and algorithmic thinking.</p>
+                <div class="achievement-tags">
+                    <span class="tag">LeetCode</span>
+                    <span class="tag">GeeksforGeeks</span>
+                    <span class="tag">Codeforces</span>
+                    <span class="tag">Problem Solving</span>
+                </div>
+            </div>
+            <div class="achievement-image">
+                <img src="lc.png" alt="Competitive Programming">
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-image">
+                <img src="codevita.png" alt="TCS CodeVita">
+            </div>
+            <div class="achievement-content">
+                <h2 class="achievement-title">
+                    <i class="fas fa-trophy"></i>
+                    TCS CodeVita Achievement
+                </h2>
+                <p class="achievement-description">Secured a top rank of 1817 in the prestigious TCS CodeVita Season XI coding competition, competing against participants worldwide.</p>
+                <div class="achievement-tags">
+                    <span class="tag">TCS CodeVita</span>
+                    <span class="tag">Competitive Coding</span>
+                    <span class="tag">Global Ranking</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-content">
+                <h2 class="achievement-title">
+                    <i class="fas fa-certificate"></i>
+                    Academic Excellence
+                </h2>
+                <p class="achievement-description">Recognized among Dean's top 10% students at University for outstanding academic performance and active participation in extra-curricular activities.</p>
+                <div class="achievement-tags">
+                    <span class="tag">Dean's List</span>
+                    <span class="tag">Academic Excellence</span>
+                    <span class="tag">Leadership</span>
+                </div>
+            </div>
+            <div class="achievement-image">
+                <img src="dean_list.png" alt="Academic Achievement">
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">←</a>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Sharda - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+        }
+
+        .download-btn {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(calc(-50% - 3px));
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            margin-bottom: 30px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .section h2 {
+            color: #FFD700;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            margin-bottom: 20px;
+        }
+
+        .skill-category h3 {
+            color: #FFA500;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.1);
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .date {
+            color: #FFD700;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .company {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .description ul {
+            list-style: none;
+        }
+
+        .description li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .description li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .download-btn {
+                position: relative;
+                right: auto;
+                top: auto;
+                transform: none;
+                display: inline-block;
+                margin-top: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Muskan Sharda</h1>
+            <p>CSE Graduate | Data Engineer | AI Enthusiast</p>
+            <a href="12214352 Muskan.pdf" class="download-btn" download>Download CV</a>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">C++</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">Java</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Developer Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">Power BI</span>
+                        <span class="skill-item">Google Colab</span>
+                        <span class="skill-item">VSCode</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Flask</span>
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Seaborn</span>
+                        <span class="skill-item">Numpy</span>
+                        <span class="skill-item">Scikit-learn</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Skills</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">MySQL</span>
+                        <span class="skill-item">Microsoft Azure</span>
+                        <span class="skill-item">HTML</span>
+                        <span class="skill-item">CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="date">March 2024 - November 2024</div>
+                <div class="title">Junior Data Analytics Trainer</div>
+                <div class="company">Coding Superstar</div>
+                <div class="description">
+                    <ul>
+                        <li>Instructed over 25 non-IT professionals in essential data analytics topics such as SQL, Python, and its libraries, delivering more than 50+ hours of comprehensive lectures.</li>
+                        <li>Conducted practical coursework and online sessions, ensuring clear presentation of topics.</li>
+                        <li>Enhanced communication and mentorship skills by fostering regular interaction and providing personalized guidance.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="date">June 2024 – August 2024</div>
+                <div class="title">Business Analyst Intern</div>
+                <div class="company">Futurense Technologies</div>
+                <div class="description">
+                    <ul>
+                        <li>Led a team of 7 to develop a full-stack project using Flask, integrating GenAI features that enhanced functionality and reduced processing time by 20%.</li>
+                        <li>Analysed real-time data for the USA Pathway Program, focusing on data cleaning, EDA, and pre-processing.</li>
+                        <li>Built interactive dashboards using Azure Data Lake for efficient real-time data processing.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="date">August 2022 – March 2026</div>
+                <div class="title">Bachelor of Technology - Computer Science and Engineering</div>
+                <div class="company">Lovely Professional University</div>
+                <div class="description">
+                    <ul>
+                        <li>Specialization: AI and Data Engineering</li>
+                        <li>CGPA: 8.92/10</li>
+                        <li>Coursework: Object Oriented Programming, Data Structures and Algorithms, Machine Learning, Data Analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">←</a>
+</body>
+</html>

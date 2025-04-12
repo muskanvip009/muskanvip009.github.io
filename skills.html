@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills and Technologies - Aarav Mehta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .skills-header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .skills-section {
+            margin-bottom: 50px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+
+        .skills-section:nth-child(2) { animation-delay: 0.2s; }
+        .skills-section:nth-child(3) { animation-delay: 0.4s; }
+        .skills-section:nth-child(4) { animation-delay: 0.6s; }
+        .skills-section:nth-child(5) { animation-delay: 0.8s; }
+        .skills-section:nth-child(6) { animation-delay: 1s; }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .skills-section h2 {
+            color: #FFD700;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .skills-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border-radius: 2px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .skill-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 968px) {
+            .container {
+                margin: 30px 15px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .skills-header h1 {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            .skills-header {
+                padding: 20px;
+            }
+
+            .skills-section h2 {
+                font-size: 1.5em;
+            }
+
+            .skill-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="skills-header">
+            <h1>Skills and Technologies</h1>
+        </div>
+
+        <div class="skills-section">
+            <h2>Programming Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-item">C++</div>
+                <div class="skill-item">Python</div>
+                <div class="skill-item">C</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Databases</h2>
+            <div class="skills-grid">
+                <div class="skill-item">MySQL</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Developer Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-item">GitHub</div>
+                <div class="skill-item">Power BI</div>
+                <div class="skill-item">Google Colab</div>
+                <div class="skill-item">VSCode</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Cloud Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Microsoft Azure</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Frameworks/Libraries</h2>
+            <div class="skills-grid">
+                <div class="skill-item">HTML</div>
+                <div class="skill-item">CSS</div>
+                <div class="skill-item">Flask</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Pandas</div>
+                <div class="skill-item">Seaborn</div>
+                <div class="skill-item">Numpy</div>
+                <div class="skill-item">Scikit-learn</div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Soft Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Leadership</div>
+                <div class="skill-item">Effective Communication</div>
+                <div class="skill-item">Problem Solving</div>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-btn">←</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.skills-section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'all 0.6s ease-out';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

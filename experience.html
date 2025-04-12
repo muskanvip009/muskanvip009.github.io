@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Aarav Mehta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .experience-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .experience-header h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .experience-header .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .experience-card {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .experience-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .experience-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .experience-card.reverse {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        .experience-content {
+            padding: 20px;
+        }
+
+        .experience-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .experience-card:hover .experience-image img {
+            transform: scale(1.05);
+        }
+
+        .date {
+            color: #FFD700;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .company {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .company i {
+            color: #FFD700;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        @media (max-width: 968px) {
+            .experience-card,
+            .experience-card.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-image {
+                height: 250px;
+            }
+
+            .container {
+                margin: 30px 15px;
+            }
+
+            .experience-header h1 {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            .experience-header {
+                padding: 20px;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .date, .company {
+                font-size: 1em;
+            }
+
+            .tech-tag {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="experience-header">
+            <h1>Professional Experience ✨</h1>
+            <p class="subtitle">My Journey Through Technology 🚀</p>
+        </div>
+
+        <div class="timeline">
+            <div class="experience-card">
+                <div class="experience-content">
+                    <div class="date">June 2024 – August 2024 📅</div>
+                    <h3>Business Analyst Intern 📊</h3>
+                    <div class="company">
+                        <i class="fas fa-building"></i> Futurense Technologies
+                    </div>
+                    <ul>
+                        <li>🎯 Led a team of 7 to develop a full-stack project using Flask, integrating GenAI features that enhanced functionality and reduced processing time by 20%.</li>
+                        <li>📈 Analysed real-time data provided by Futurense for the USA Pathway Program, focusing on data cleaning, EDA, and preprocessing to extract key business insights.</li>
+                        <li>📊 Built an interactive dashboard and maintained data pipelines using Azure Data Lake, ensuring efficient real-time data processing.</li>
+                    </ul>
+                </div>
+                <div class="experience-image">
+                    <img src="Futurense-experince.png" alt="Business Analysis">
+                </div>
+            </div>
+
+            <div class="experience-card reverse">
+                <div class="experience-image">
+                    <img src="Coding Superstar.png" alt="Data Analytics Training">
+                </div>
+                <div class="experience-content">
+                    <div class="date">March 2024 - November 2024 📅</div>
+                    <h3>Junior Data Analytics Trainer 👨‍🏫</h3>
+                    <div class="company">
+                        <i class="fas fa-star"></i> Coding Superstar
+                    </div>
+                    <ul>
+                        <li>👥 Instructed over 25 non-IT professionals in essential data analytics topics such as SQL, Python, and its libraries.</li>
+                        <li>📚 Conducted practical coursework and online sessions, ensuring clear and approachable presentation.</li>
+                        <li>🤝 Enhanced communication and mentorship skills by fostering regular interaction and providing personalized guidance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <a href="index.html" class="back-btn">←</a>
+</body>
+</html>

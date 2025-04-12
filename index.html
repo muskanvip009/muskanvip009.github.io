@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan Sharda - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1a1a1a, #0a0a0a);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo a {
+            font-size: 1.8em;
+            text-decoration: none;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .logo .subtitle {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.7);
+            display: block;
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 8px 15px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 70%;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .about-section {
+            margin-top: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 30px;
+            object-fit: cover;
+            border: 3px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image img:hover {
+            transform: scale(1.02);
+            border-color: #FFD700;
+        }
+
+        .profile-image h2 {
+            margin-top: 20px;
+            font-size: 2em;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .role {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #FFD700;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            color: #FFA500;
+        }
+
+        .profile-details {
+            padding: 20px;
+        }
+
+        .profile-details h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-details p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .profile-details ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .profile-details li {
+            margin: 10px 0;
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-details li::before {
+            content: '•';
+            color: #FFD700;
+            font-size: 1.5em;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:first-child {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #1a1a1a;
+        }
+
+        .btn:last-child {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+        }
+
+        @media (max-width: 968px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile-details li {
+                justify-content: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .profile-details h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#">Muskan</a>
+                <span class="subtitle">CSE grad</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="resume.html">RESUME</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="certifications.html">CERTIFICATIONS</a></li>
+                <li><a href="skills.html">SKILLS</a></li>
+                <li><a href="experience.html">EXPERIENCE</a></li>
+                <li><a href="achievements.html">ACHIEVEMENTS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="profile-image">
+                <img src="profile pic.png" alt="Muskan Sharda">
+                <h2>Muskan Sharda</h2>
+                <p class="role">Motivated CSE grad | Data Engineer | Backend Developer | Cloud developer | Building scalable tech solutions</p>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@muskansharda4327" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/muskanvip009" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muskan-sharda/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="profile-details">
+                <h1>About Me</h1>
+                <p>Hi, I'm Muskan Sharda, a passionate Computer Science student from Lovely Professional University, Phagwara, specializing in:</p>
+                <ul>
+                    <li>Data Engineering</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Cloud Computing</li>
+                </ul>
+                <p>I'm deeply committed to building innovative and scalable applications that tackle real-world problems through technology.</p>
+                <div class="buttons">
+                    <a href="resume.html" class="btn">Resume</a>
+                    <a href="projects.html" class="btn">Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
