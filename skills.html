@@ -189,6 +189,20 @@
                 padding: 15px;
             }
         }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .skill-item img {
+            width: 24px;
+            height: 24px;
+        }
     </style>
 </head>
 <body>
@@ -196,62 +210,64 @@
         <div class="skills-header">
             <h1>Skills and Technologies</h1>
         </div>
-
-        <div class="skills-section">
-            <h2>Programming Languages</h2>
-            <div class="skills-grid">
-                <div class="skill-item">C++</div>
-                <div class="skill-item">Python</div>
-                <div class="skill-item">C</div>
+            <div class="skills-section">
+                <h2>Programming Languages</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">C</div>
+                </div>
             </div>
-        </div>
 
-        <div class="skills-section">
-            <h2>Databases</h2>
-            <div class="skills-grid">
-                <div class="skill-item">MySQL</div>
+            <div class="skills-section">
+                <h2>Databases</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">MySQL</div>
+                </div>
             </div>
-        </div>
 
-        <div class="skills-section">
-            <h2>Developer Tools</h2>
-            <div class="skills-grid">
-                <div class="skill-item">GitHub</div>
-                <div class="skill-item">Power BI</div>
-                <div class="skill-item">Google Colab</div>
-                <div class="skill-item">VSCode</div>
+            <div class="skills-section">
+                <h2>Developer Tools</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">GitHub</div>
+                    <div class="skill-item"><img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI">Power BI</div>
+                    <div class="skill-item"><img src="https://img.icons8.com/fluency/48/google-logo.png" alt="Google Colab">Google Colab</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode">VSCode</div>
+                </div>
             </div>
-        </div>
 
-        <div class="skills-section">
-            <h2>Cloud Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Microsoft Azure</div>
+            <div class="skills-section">
+                <h2>Cloud Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">Microsoft Azure</div>
+                </div>
             </div>
-        </div>
 
-        <div class="skills-section">
-            <h2>Frameworks/Libraries</h2>
-            <div class="skills-grid">
-                <div class="skill-item">HTML</div>
-                <div class="skill-item">CSS</div>
-                <div class="skill-item">Flask</div>
-                <div class="skill-item">Machine Learning</div>
-                <div class="skill-item">Pandas</div>
-                <div class="skill-item">Seaborn</div>
-                <div class="skill-item">Numpy</div>
-                <div class="skill-item">Scikit-learn</div>
+            <div class="skills-section">
+                <h2>Frameworks/Libraries</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">HTML</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">CSS</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">Flask</div>
+                    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/4149/4149675.png" alt="ML">Machine Learning</div>
+                    <div class="skill-item"><img src="https://img.icons8.com/color/48/pandas.png" alt="Pandas">Pandas</div>
+                    <div class="skill-item"><img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" style="width: 24px;" alt="Seaborn">Seaborn</div>
+                    <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">Numpy</div>
+                    <div class="skill-item"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">Scikit-learn</div>
+                </div>
             </div>
-        </div>
 
-        <div class="skills-section">
-            <h2>Soft Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Leadership</div>
-                <div class="skill-item">Effective Communication</div>
-                <div class="skill-item">Problem Solving</div>
+            <div class="skills-section">
+                <h2>Soft Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="https://img.icons8.com/color/48/leadership.png" alt="Leadership">Leadership</div>
+                    <div class="skill-item"><img src="https://img.icons8.com/color/48/communication.png" alt="Communication">Effective Communication</div>
+                    <div class="skill-item"><img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Problem Solving">Problem Solving</div>
+                </div>
             </div>
-        </div>
+
+
+
     </div>
 
     <a href="index.html" class="back-btn">←</a>

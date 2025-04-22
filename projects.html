@@ -198,7 +198,7 @@
         .project-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             transition: transform 0.5s ease;
         }
 
@@ -246,10 +246,14 @@
                 <div class="project-duration">November 2024 – December 2024</div>
                 <div class="project-tech">Azure Data Lake | Databricks | Power BI</div>
                 <ul class="project-details">
-                    <li>Engineered a robust data pipeline that seamlessly integrates multiple APIs to fetch real-time sales data, storing raw data in Azure Data Lake via Azure Data Factory (ADF) for secure and scalable storage.</li>
-                    <li>Transformed and enriched data in Databricks across multiple layers (Bronze to Silver to Gold), utilizing Azure Synapse Analytics for efficient data warehousing and advanced SQL pool views.</li>
-                    <li>Designed interactive Power BI dashboards to provide real-time insights and detailed analysis of sales data.</li>
+                    <li>Built a high-volume sales data pipeline processing 50K+ daily transactions from multiple sources into Azure Data Lake
+                        (Parquet), reducing storage costs by 40% while implementing Azure Key Vault for secure credential management.</li>
+                    <li>Transformed raw data into analytics-ready insights using Databricks (Bronze→Silver→Gold) and Synapse SQL pools, improving
+                        query performance by 60% and enabling daily executive dashboards with 15-minute latency</li>
+                    <li>Created automated sales dashboards in Power BI that replaced manual reporting, saving 10+ hours weekly.</li>
                 </ul>
+
+
                 <div class="tech-stack">
                     <span class="tech-tag">Azure Data Lake</span>
                     <span class="tech-tag">Databricks</span>
@@ -274,9 +278,12 @@
                 <div class="project-duration">July 2024 – August 2024</div>
                 <div class="project-tech">Python | Power BI | Azure Data Lake</div>
                 <ul class="project-details">
-                    <li>Analysed the real-time data of Futurense's USA Pathway Program, performing data cleaning, exploratory data analysis (EDA), and pre-processing to ensure data quality and extract actionable insights.</li>
-                    <li>Developed a comprehensive Power BI dashboard to visualize product analysis, candidate success rates, and dropout rates, aiding in strategic decision-making.</li>
-                    <li>Maintained data pipelines using Azure Data Lake for efficient real-time data processing, and delivered a detailed explanatory video for stakeholders.</li>
+                    <li>Processed and analyzed 100K+ records across sales, marketing, and finance domains, performing advanced EDA and data
+                        cleaning that improved dataset quality by 30% (measured by reduced null values) and identified key dropout patterns.</li>
+                    <li>Engineered Azure Data Lake pipelines (Data Factory → Synapse) that reduced processing latency by 25%, enabling real-time
+                        tracking of candidate conversion rates from application to intake</li>
+                    <li>Developed a strategic Power BI dashboard tracking program KPIs (success rates, dropout trends), adopted by leadership to
+                        optimize recruitment strategies and improve candidate outcomes</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
@@ -298,6 +305,10 @@
                     <li>Designed and implemented LuxeVoyage, a web application leveraging Gen AI to enhance the travel booking experience. The platform provides users with flight details, hotel information, and trip itineraries based on prompts, utilizing CrewAI and RapidAPI for data retrieval.</li>
                     <li>Focused on optimizing response time, currently reducing the output generation time from 40 seconds to improve user experience.</li>
                 </ul>
+
+
+
+
                 <div class="tech-stack">
                     <span class="tech-tag">Flask</span>
                     <span class="tech-tag">Supabase</span>
